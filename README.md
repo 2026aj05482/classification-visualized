@@ -31,7 +31,9 @@ The source is loaded offline using `sklearn.datasets.load_breast_cancer`, which 
 
 [https://github.com/2026aj05482/classification-visualized](https://github.com/2026aj05482/classification-visualized)
 
-**Streamlit deployment status:** Prepared and tested locally. A live Community Cloud deployment has not yet been verified. Deployment settings and instructions appear below.
+**Streamlit deployment status:** Successfully deployed on Streamlit Community Cloud.
+
+**Live app:** [https://classification-visualized-gngrdynrbzthg79wu5dkj5.streamlit.app/](https://classification-visualized-gngrdynrbzthg79wu5dkj5.streamlit.app/)
 
 ## d. Models used
 
@@ -134,12 +136,14 @@ Uploads are limited to 5 MB and 10,000 rows. Numeric features must be finite and
 
 If an uploaded file has only one target class, ROC AUC is mathematically undefined and is shown as N/A; ROC curves are omitted. Undefined precision/recall/F1 divisions and degenerate MCC are reported as 0, matching the documented evaluation convention. Use a test file with both classes for a complete six-metric comparison.
 
-## Deploy on Streamlit Community Cloud
+## Streamlit Community Cloud deployment
+
+The app is successfully deployed at the live URL above. The following steps document how to reproduce or redeploy it:
 
 1. Push all project files, including `model/` and `test_data.csv`, to the GitHub repository above.
 2. Sign in at [Streamlit Community Cloud](https://share.streamlit.io/) using GitHub, then choose Create app and indicate that you already have an app.
 3. Repository: `2026aj05482/classification-visualized`; branch: `main`; entrypoint: `app.py`.
 4. Under Advanced settings, select Python 3.13 to match the tested environment, then deploy. No secrets are required.
-5. Confirm that the six metrics, all five comparison rows, model dropdown, confusion matrix and upload workflow work on the live URL. Record that URL in this README and regenerate the PDF before final submission.
+5. After any redeployment, confirm that the six metrics, all five comparison rows, model dropdown, confusion matrix and upload workflow work on the live URL. If the URL changes, update it in this README and regenerate the submission PDF.
 
 The root `requirements.txt` includes every direct app dependency and pins the numerical libraries used to serialize the models. Do not upgrade scikit-learn independently of the artifacts; retrain and verify if changing versions. PDF-only dependencies are separated so Community Cloud does not need them. Official guidance: [Deploy your app on Community Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy).

@@ -1,0 +1,2 @@
+# Preserve generated PDF bytes when Git normalizes line endings on Windows.
+*.pdf binary
